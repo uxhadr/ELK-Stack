@@ -12,24 +12,58 @@ Elasticsearch is the core of the ELK stack, providing a scalable search and anal
   ```bash
   dpkg -i elasticsearch.deb
 
-### Making the service persistent
+### 3. Making the service persistent
 ```bash
 systemctl enable elasticsearch.service
 systemctl start elasticsearch.service
+```
 
-### I modified the elasticsearch.yml file to set the network host and HTTP port, which ensures Elasticsearch is accessible on the network
-(insert picture of open the elastic search configuration)
+### 4. Configuring Elasticsearch
+I modified the `elasticsearch.yml` file to set the network host and HTTP port, ensuring Elasticsearch is accessible on the network.
 
-### Installing logstash to handle log ingestion.
-(pic below)
-Installing log stash  (picture below)
-Change configuration settings to look at the configuration files every 3s to see if there are any changes to the log sources which are being ingested  (picture below)
-Checking to see which version of logstash I installed  (picture below)
-Installing and configuring kibana  (picture below)
-The following commands to make the kibana service persistent  (picture below)
-Checking on the status of kibana  (picture below)
-Logging in on the Kibana interface  (picture below)
-Creating an enrollment token  (picture below)
-Pasted the token into elastic search website  (picture below)
-Verification code required  (picture below)
-Getting the code from the terminal  (picture below)
+![Configuring Elasticsearch](https://github.com/user-attachments/assets/6c465e82-6e28-403a-b348-3700baa910be)
+
+### 5. Installing Logstash
+Logstash is responsible for handling log ingestion. Below is the process for installing and configuring Logstash.
+
+- **Installing Logstash:**
+  ![Installing Logstash](picture_below)
+
+- **Changing Configuration Settings:**
+  The configuration is set to check for changes in the log sources every 3 seconds.
+  ![Changing Configuration Settings](picture_below)
+
+- **Checking the Installed Version of Logstash:**
+  ![Checking Installed Version](picture_below)
+
+### 6. Installing and Configuring Kibana
+Kibana provides the web interface for visualizing and interacting with the data stored in Elasticsearch.
+
+- **Installing Kibana:**
+  ![Installing Kibana](picture_below)
+
+- **Making the Kibana Service Persistent:**
+  Run the following commands to ensure Kibana starts automatically:
+  ![Making Kibana Service Persistent](picture_below)
+
+- **Checking Kibana Status:**
+  ![Checking Kibana Status](picture_below)
+
+### 7. Accessing the Kibana Interface
+Log in to the Kibana interface using your browser.
+
+- **Logging into Kibana:**
+  ![Logging into Kibana](picture_below)
+
+### 8. Creating an Enrollment Token
+The enrollment token is required to connect Kibana to Elasticsearch.
+
+- **Creating and Using the Enrollment Token:**
+  ![Creating Enrollment Token](picture_below)
+
+### 9. Verification Code Required
+Elasticsearch requires a verification code to complete the setup.
+
+- **Getting the Verification Code from the Terminal:**
+  ![Getting Verification Code](picture_below)
+```
