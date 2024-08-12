@@ -1,6 +1,18 @@
 # ELK Stack Deployment on TryHackMe Lab
+
 ## Introduction
-This project involves deploying and configuring the ELK Stack (Elasticsearch, Logstash, and Kibana) as part of the SOC Level 2 path on TryHackMe. The ELK Stack is a powerful set of tools for searching, analyzing, and visualizing log data in real-time, which is crucial for cybersecurity monitoring and incident response.
+
+This project involves deploying and configuring the ELK Stack (Elasticsearch, Logstash, and Kibana) as part of the SOC Level 2 path on TryHackMe. The ELK Stack is a powerful suite of tools designed for real-time search, analysis, and visualization of log data, making it an essential component in cybersecurity monitoring and incident response.
+
+The Elastic Stack is comprised of three key components:
+
+- **Logstash**: Responsible for data ingestion, Logstash acts as a pipeline that pulls data from various sources, processes it using filter plugins, and sends it to the desired destination. It efficiently handles data processing, transforming raw logs into structured data ready for analysis.
+
+- **Elasticsearch**: Serving as the core of the ELK Stack, Elasticsearch is a highly scalable search and analytics engine. It receives data from Logstash, allowing for powerful searching, querying, and real-time analysis of large datasets.
+
+- **Kibana**: Kibana is the visualization layer of the stack. It provides an intuitive web interface that enables users to interact with the data stored in Elasticsearch, creating dashboards and reports that offer deep insights into the data.
+
+By configuring and integrating these components, the ELK Stack provides a robust platform for managing and analyzing log data, crucial for effective cybersecurity operations.
 
 ## Setup and Installation
 ### 1. SSH into the TryHackMe Room
@@ -19,8 +31,7 @@ systemctl start elasticsearch.service
 ```
 
 ### 4. Configuring Elasticsearch
-I modified the `elasticsearch.yml` file to set the network host and HTTP port, ensuring Elasticsearch is accessible on the network.
-
+The `/etc/elasticsearch` directory contains all the important configuration files related to Elasticsearch. In the `elasticsearch.yml` file, I uncommented the `network.host` and `http.port` variables. Since all components are being installed on the same host, I set the `network.host` to `127.0.0.1`. After making these changes, I saved the file and restarted the Elasticsearch service to apply the new configuration.
 ![Configuring Elasticsearch](https://github.com/user-attachments/assets/6c465e82-6e28-403a-b348-3700baa910be)
 
 ### 5. Installing Logstash
@@ -73,4 +84,4 @@ Elasticsearch requires a verification code to complete the setup.
 - **Getting the Verification Code from the Terminal:**
   <img width="979" alt="Pasted Graphic 33" src="https://github.com/user-attachments/assets/17b95703-3794-459d-ab4e-989069518ce3">
 
-```
+
